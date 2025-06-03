@@ -50,11 +50,11 @@ trailblazer_wider = trailblazer_longer |>
 pivot_wider(names_from = Location, values_from = Points) |> 
   group_by(Player) |>  
 mutate(mean_home = mean(Home, na.rm=TRUE), mean_away = mean(Away, na.rm = TRUE),
-pt_diff = sum(Home,na.rm=TRUE)-sum(Away,na.rm=TRUE)) |> 
+pt_diff = mean_home-mean_away) |> 
   arrange(desc(pt_diff))
 ```
 
-The players that scored more at home than away are Jusuf Nurkic (55 more), Robert Covington (45 more), and Damian Lillard (41 more)
+The players that scored more at home than away are Jusuf Nurkic , Robert Covington, and Nassir Little
 
 ## Task 3
 
